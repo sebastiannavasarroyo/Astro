@@ -1,6 +1,7 @@
 ---
 const name = "Sebastian Navas";
 const title = "Home Page";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <html lang="en">
@@ -14,10 +15,15 @@ const title = "Home Page";
 	</head>
 	<body>
 		<h1>{name}</h1>
+
 		<p id="current-time">Momento actual real: </p>
+
 		<footer>
 			<p id="year-text">Año: 2023</p>
 		</footer>
+		
+	    <Navbar />
+
 	</body>
 </html>
 
