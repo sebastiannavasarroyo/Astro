@@ -1,17 +1,7 @@
 ---
-const title = "About Page";
-import Navbar from "../components/Navbar.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>{title}</title>
-	</head>
-	<body>
-        <Navbar />
-
-		<h1>Sobre Nosotros</h1>
-	</body>
-</html>
+<MainLayout title="About Page">
+	<h1>Sobre Nosotros</h1>
+</MainLayout>
