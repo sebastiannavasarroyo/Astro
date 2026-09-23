@@ -14,7 +14,7 @@ const title = "Home Page";
 	</head>
 	<body>
 		<h1>{name}</h1>
-
+		<p id="current-time">Momento actual real: </p>
 		<footer>
 			<p id="year-text">Año: 2023</p>
 		</footer>
@@ -25,4 +25,7 @@ const title = "Home Page";
 	const yearText = document.querySelector("#year-text") as HTMLElement;
 	const currentYear: number = new Date().getFullYear();
 	yearText.innerText = `Año: ${currentYear}`;
+
+	const currentTimeParagraph = document.querySelector("#current-time") as HTMLParagraphElement;
+	currentTimeParagraph.innerText = `Momento actual real: ${new Date().toLocaleTimeString()}`;
 </script>
