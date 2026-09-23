@@ -1,5 +1,6 @@
 ---
-
+const name = "Sebastian Navas";
+const title = "Home Page";
 ---
 
 <html lang="en">
@@ -9,9 +10,19 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Sebastian Navas</title>
+		<title>{title}</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<h1>{name}</h1>
+
+		<footer>
+			<p id="year-text">Año: 2023</p>
+		</footer>
 	</body>
 </html>
+
+<script>
+	const yearText = document.querySelector("#year-text") as HTMLElement;
+	const currentYear: number = new Date().getFullYear();
+	yearText.innerText = `Año: ${currentYear}`;
+</script>
