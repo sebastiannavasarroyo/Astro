@@ -1,0 +1,24 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+const name = "Sebastian Navas";
+---
+
+<MainLayout title="Home Page">
+	<h1>{name}</h1>
+
+	<p id="current-time">Momento actual real: </p>
+
+	<footer>
+		<p id="year-text">Año: 2023</p>
+	</footer>
+</MainLayout>
+
+<script>
+	const yearText = document.querySelector("#year-text") as HTMLElement;
+	const currentYear: number = new Date().getFullYear();
+	yearText.innerText = `Año: ${currentYear}`;
+
+	const currentTimeParagraph = document.querySelector("#current-time") as HTMLParagraphElement;
+	currentTimeParagraph.innerText = `Momento actual real: ${new Date().toLocaleTimeString()}`;
+</script>
