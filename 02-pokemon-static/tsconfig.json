@@ -1,18 +1,12 @@
 {
+	"extends": "astro/tsconfigs/base",
 	"compilerOptions": {
-		"target": "ESNext",
-		"module": "ESNext",
-		"moduleResolution": "Bundler",
-		"allowImportingTsExtensions": true,
-		"resolveJsonModule": true,
-		"verbatimModuleSyntax": true,
-		"isolatedModules": true,
-		"noEmit": true,
-		"forceConsistentCasingInFileNames": true,
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"allowJs": true,
-		"jsx": "preserve"
+		"baseUrl": ".",
+		"paths": {
+			"@components/*": ["./src/components/*"],
+			"@interfaces/*": ["./src/interfaces/*"],
+			"@layouts/*": ["./src/layouts/*"]
+		}
 	},
 	"include": [".astro/types.d.ts", "**/*"],
 	"exclude": ["dist"]

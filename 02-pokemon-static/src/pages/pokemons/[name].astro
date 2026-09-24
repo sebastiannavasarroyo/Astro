@@ -1,7 +1,7 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
-import PokemonCard from "../../components/pokemons/PokemonCard.astro";
-import type { PokemonListResponse } from "../../interfaces/pokemon-list.response";
+import MainLayout from "@layouts/MainLayout.astro";
+import PokemonCard from "@components/pokemons/PokemonCard.astro";
+import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
 
 interface Props {
 	url: string;
@@ -40,4 +40,3 @@ const audioSrc = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pok
 		</audio>
 	</section>
 </MainLayout>
-

@@ -1,8 +1,8 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
-import PokemonCard from "../../components/pokemons/PokemonCard.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import PokemonCard from "@components/pokemons/PokemonCard.astro";
 import type { GetStaticPaths } from "astro";
-import type { PokemonListResponse } from "../../interfaces/pokemon-list.response";
+import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const resp = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
@@ -26,11 +26,11 @@ const title = "Pokémon Static | Home";
 	</section>
 
 	<section class="flex gap-2 items-center mt-10">
-	<a href={page.url.prev} class:list={["btn", { disabled: page.url.prev === undefined }]}>Anteriores</a>
-	<a href={page.url.next} class:list={["btn", { disabled: page.url.next === undefined }]}>Siguientes</a>
-	<div class="flex flex-1">
-		<span class="text-xl font-bold">Página {page.currentPage}</span>
-	</div>
+		<a href={page.url.prev} class:list={["btn", { disabled: page.url.prev === undefined }]}>Anteriores</a>
+		<a href={page.url.next} class:list={["btn", { disabled: page.url.next === undefined }]}>Siguientes</a>
+		<div class="flex flex-1">
+			<span class="text-xl font-bold">Página {page.currentPage}</span>
+		</div>
 	</section>
 </MainLayout>
 
