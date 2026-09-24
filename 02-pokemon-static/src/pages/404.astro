@@ -1,0 +1,87 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+---
+
+<MainLayout title="404 | Not Found">
+	<div class="wrap">
+		<video
+			class="video"
+			poster="https://knife.media/wp-content/themes/knife/assets/images/poster-error.jpg"
+			autoplay
+			preload
+			loop
+			muted
+		>
+			<source
+				src="https://knife.media/wp-content/themes/knife/assets/video/video-error.mp4"
+				type="video/mp4"
+			/>
+		</video>
+
+		<div class="message">
+			<h1>Nothing found</h1>
+			<p>
+				Better go to the <a href="/">main page</a><br /> and read something fresh.
+			</p>
+		</div>
+	</div>
+</MainLayout>
+
+<style is:global>
+	body {
+		margin: 0;
+		padding: 0;
+		background: #000;
+		color: #fff;
+	}
+
+	.wrap {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+		box-sizing: border-box;
+		width: 40rem;
+		max-width: 90%;
+		text-align: center;
+	}
+
+	.video {
+		display: block;
+		width: 90%;
+		height: auto;
+		margin: 0 auto;
+	}
+
+	.message {
+		display: block;
+		padding: 0 1rem;
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 1.875em;
+		font-weight: 400;
+		margin: 0;
+		color: #fff;
+	}
+
+	p {
+		margin: 1rem 0;
+	}
+
+	a {
+		color: #2f72e1;
+		border-bottom: 1px solid #2f72e1;
+		text-decoration: none;
+		transition: border 0.25s;
+	}
+
+	a:hover {
+		border-bottom-color: transparent;
+	}
+</style>
