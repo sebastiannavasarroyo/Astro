@@ -1,0 +1,19 @@
+---
+const links = [
+	{ href: "/", name: "Listado" },
+	{ href: "/pokemons/1", name: "Paginado" },
+	{ href: "/favorites", name: "Favoritos" },
+];
+---
+
+<nav class="bg-slate-900 shadow">
+	<div class="flex gap-6 p-4">
+		{
+			links.map(({ href, name }) => (
+				<a href={href} class="text-slate-100 hover:text-blue-400">
+					{name}
+				</a>
+			))
+		}
+	</div>
+</nav>
