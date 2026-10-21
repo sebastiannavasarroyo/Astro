@@ -1,6 +1,7 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import PokemonCard from "@components/pokemons/PokemonCard.astro";
+import Title from "@components/shared/Title.astro";
 import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
 
 const title = "Pokémon Static | Home";
@@ -10,6 +11,8 @@ const data = (await resp.json()) as PokemonListResponse;
 ---
 
 <MainLayout title={title}>
+	<Title>Listado</Title>
+
 	<section aria-label="Listado de Pokemons" class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
 		{
 			data.results.map((pokemon) => (

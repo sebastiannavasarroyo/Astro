@@ -1,6 +1,7 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import PokemonCard from "@components/pokemons/PokemonCard.astro";
+import Title from "@components/shared/Title.astro";
 import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
 
 interface Props {
@@ -32,10 +33,12 @@ const imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
 >
 	<section class="mt-10 mx-10 flex flex-col justify-center items-center">
 		<div>
-			<a href="/" class="hover:underline text-blue-500">Regresar</a>
+			<button onclick="history.back()" class="text-blue-500 hover:underline">
+				Regresar
+			</button>
 		</div>
 
-		<h1 class="text-3xl capitalize">{name}</h1>
+		<Title>{name}</Title>
 
 		<PokemonCard name={name} url={url} isBig />
 

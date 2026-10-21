@@ -4,15 +4,27 @@ const links = [
 	{ href: "/pokemons/1", name: "Paginado" },
 	{ href: "/favorites", name: "Favoritos" },
 ];
+
+const currentPath = Astro.url.pathname;
 ---
 
 <nav class="bg-slate-900 shadow">
 	<div class="flex gap-6 p-4">
 		{
 			links.map(({ href, name }) => (
-				<a href={href} class="text-slate-100 hover:text-blue-400">
-					{name}
-				</a>
+				<div>
+					<a href={href} class="text-slate-100 hover:text-blue-400">
+						{name}
+					</a>
+					{currentPath === href ? (
+						<div
+							class="border-b-2 border-blue-500 mx-1"
+							transition:name="menu-line"
+						/>
+					) : (
+						<div class="border-b-2 border-transparent mx-1" />
+					)}
+				</div>
 			))
 		}
 	</div>
