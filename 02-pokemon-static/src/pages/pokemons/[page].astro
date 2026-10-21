@@ -20,7 +20,7 @@ const title = "Pokémon Static | Listado paginado";
 <MainLayout title={title}>
 	<Title>Listado paginado</Title>
 
-	<section aria-label="Listado de Pokemons" class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
+	<section aria-label="Listado de Pokemons" class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-5">
 		{
 			page.data.map((pokemon) => (
 				<PokemonCard name={pokemon.name} url={pokemon.url} />

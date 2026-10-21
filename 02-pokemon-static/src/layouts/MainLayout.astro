@@ -31,10 +31,14 @@ const {
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={image} />
 
+		<!-- Usamos ClientRouter (View Transitions) en vez de @view-transition en
+		     CSS puro, porque esa opción aún no es compatible con todos los navegadores -->
 		<ClientRouter />
 	</head>
-	<body class="bg-slate-800 text-slate-100 m-auto max-w-3xl">
-	    <Navbar />
-		<slot />
+	<body class="bg-slate-800 text-slate-100 flex flex-col min-h-screen">
+		<Navbar />
+		<main class="flex-grow w-full max-w-3xl mx-auto mt-10 px-4">
+			<slot />
+		</main>
 	</body>
 </html>
