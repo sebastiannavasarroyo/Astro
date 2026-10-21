@@ -1,8 +1,16 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import Title from "@components/shared/Title.astro";
+import { Counter } from "@components/Counter";
 ---
 
 <MainLayout title="Favoritos">
 	<Title>Favoritos</Title>
+
+	<Counter
+		client:visible
+		initialValue={15}
+		transition:persist="counter"
+		transition:persist-props
+	/>
 </MainLayout>
