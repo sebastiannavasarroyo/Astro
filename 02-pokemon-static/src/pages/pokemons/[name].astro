@@ -38,7 +38,7 @@ const imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
 				Regresar
 			</button>
 
-			<button id="btn-favorite" class="ml-4">
+			<button id="btn-favorite" class="ml-4" data-name={name} data-id={id}>
 				<Icon name="heart-outline" size={50} />
 				<Icon name="heart-full" size={50} class="hidden" />
 			</button>
@@ -64,3 +64,20 @@ const imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
 		@apply animate-pulse;
 	}
 </style>
+
+<script>
+	document.addEventListener("astro:page-load", () => {
+		const btnFavorite = document.querySelector(
+			"#btn-favorite",
+		) as HTMLButtonElement | null;
+
+		if (!btnFavorite) return;
+
+		btnFavorite.addEventListener("click", () => {
+			const name = btnFavorite.dataset.name;
+			const id = btnFavorite.dataset.id;
+
+			console.log({ name, id });
+		});
+	});
+</script>
