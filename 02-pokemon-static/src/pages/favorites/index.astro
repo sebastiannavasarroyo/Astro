@@ -1,16 +1,11 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import Title from "@components/shared/Title.astro";
-import { Counter } from "@components/Counter";
+import { FavoritePokemons } from "@components/pokemons/FavoritePokemons";
 ---
 
 <MainLayout title="Favoritos">
 	<Title>Favoritos</Title>
 
-	<Counter
-		client:visible
-		initialValue={15}
-		transition:persist="counter"
-		transition:persist-props
-	/>
+	<FavoritePokemons client:only="solid-js" />
 </MainLayout>
