@@ -2,6 +2,7 @@
 import MainLayout from "@layouts/MainLayout.astro";
 import PokemonCard from "@components/pokemons/PokemonCard.astro";
 import Title from "@components/shared/Title.astro";
+import { Icon } from "astro-icon/components";
 import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
 
 interface Props {
@@ -32,13 +33,20 @@ const imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
 	image={imageSrc}
 >
 	<section class="mt-10 mx-10 flex flex-col justify-center items-center">
-		<div>
+		<div class="flex flex-row">
 			<button onclick="history.back()" class="text-blue-500 hover:underline">
 				Regresar
 			</button>
+
+			<button id="btn-favorite" class="ml-4">
+				<Icon name="heart-outline" size={50} />
+				<Icon name="heart-full" size={50} class="hidden" />
+			</button>
 		</div>
 
-		<Title>{name}</Title>
+		<Title>
+			<span class="capitalize">{name}</span>
+		</Title>
 
 		<PokemonCard name={name} url={url} isBig />
 
@@ -48,3 +56,11 @@ const imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
 		</audio>
 	</section>
 </MainLayout>
+
+<style>
+	@reference "../../styles/global.css";
+
+	#btn-favorite:hover {
+		@apply animate-pulse;
+	}
+</style>
