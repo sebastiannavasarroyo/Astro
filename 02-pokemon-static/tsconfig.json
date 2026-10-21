@@ -1,14 +1,29 @@
 {
-	"extends": "astro/tsconfigs/base",
-	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"@components/*": ["./src/components/*"],
-			"@interfaces/*": ["./src/interfaces/*"],
-			"@layouts/*": ["./src/layouts/*"],
-			"@consts/*": ["./src/consts/*"]
-		}
-	},
-	"include": [".astro/types.d.ts", "**/*"],
-	"exclude": ["dist"]
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@interfaces/*": [
+        "./src/interfaces/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
+      ],
+      "@consts/*": [
+        "./src/consts/*"
+      ]
+    },
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
+  },
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ]
 }
